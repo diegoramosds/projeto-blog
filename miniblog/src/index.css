@@ -20,6 +20,7 @@ a,
 nav button {
     text-decoration: none;
     background-color: transparent;
+    border: none;
     color: black;
     transition: .4s;
     font-size: 1em;
@@ -27,10 +28,10 @@ nav button {
     font-family: "Montserrat", sans-serif;
 }
 
-a:hover {
+a:hover,
+nav button:hover {
     color: #bbb;
 }
-
 /* form styles */
 
 form {
