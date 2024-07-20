@@ -7,6 +7,7 @@ const initialState = {
     error: null,
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 const UpdateReducer = (state, action) => {
     switch(action.type) {
         case "LOADING" :
