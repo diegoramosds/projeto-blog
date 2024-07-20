@@ -16,21 +16,33 @@ const NavBar = () => {
 
 
   
-  const toggleMenu = () => {
-    setMenuOpen(prevMenuOpen => {
-      const newMenuOpen = !prevMenuOpen;
-      if (newMenuOpen) {
+    const toggleMenu = () => {
+      setMenuOpen(prevMenuOpen => {
+        const newMenuOpen = !prevMenuOpen;
+    
+        if (newMenuOpen) {
           document.body.style.position = 'fixed';
           document.body.style.width = '100%';
-      } else {
-          document.body.style.position = '';
-          document.body.style.width = '';
-      }
-      return newMenuOpen;
-  });
-  };
+          document.body.style.overflow = 'hidden';
+        } else {
+          resetBodyStyles();
+        }
+        return newMenuOpen;
+      });
+    };
   
+    const resetBodyStyles = () => {
+      document.body.style.position = '';
+      document.body.style.width = '';
+      document.body.style.overflow = 'auto';
+    };
 
+    const handleMenuItemClick = () => {
+      if (menuOpen) {
+        setMenuOpen(false);
+        resetBodyStyles();
+      }
+    };
   return (
     <nav className={styles.navbar}>
       <NavLink to="/" className={styles.brand}>
@@ -42,30 +54,30 @@ const NavBar = () => {
       </div>
       <ul className={`${styles.links_list} ${menuOpen ? styles.open : ''}`}>
         <li>
-          <NavLink to="/" onClick={toggleMenu} className={({ isActive }) => (isActive ? styles.active : "")}>Home</NavLink>
+          <NavLink to="/" onClick={handleMenuItemClick} className={({ isActive }) => (isActive ? styles.active : "")}>Home</NavLink>
         </li>
         {!user && (
           <>
             <li>
-              <NavLink to="/login" onClick={toggleMenu} className={({ isActive }) => (isActive ? styles.active : "")}>Entrar</NavLink>
+              <NavLink to="/login" onClick={handleMenuItemClick} className={({ isActive }) => (isActive ? styles.active : "")}>Entrar</NavLink>
             </li>
             <li>
-              <NavLink to="/register" onClick={toggleMenu} className={({ isActive }) => (isActive ? styles.active : "")}>Cadastrar</NavLink>
+              <NavLink to="/register" onClick={handleMenuItemClick} className={({ isActive }) => (isActive ? styles.active : "")}>Cadastrar</NavLink>
             </li>
           </>
         )}
         {user && (
           <>
             <li>
-              <NavLink to="/posts/create" onClick={toggleMenu} className={({ isActive }) => (isActive ? styles.active : "")}>Novo Post</NavLink>
+              <NavLink to="/posts/create" onClick={handleMenuItemClick} className={({ isActive }) => (isActive ? styles.active : "")}>Novo Post</NavLink>
             </li>
             <li>
-              <NavLink to="/dashboard" onClick={toggleMenu} className={({ isActive }) => (isActive ? styles.active : "")}>Dashboard</NavLink>
+              <NavLink to="/dashboard" onClick={handleMenuItemClick} className={({ isActive }) => (isActive ? styles.active : "")}>Dashboard</NavLink>
             </li>
           </>
         )}
         <li>
-          <NavLink to="/about" onClick={toggleMenu} className={({ isActive }) => (isActive ? styles.active : "")}>Sobre</NavLink>
+          <NavLink to="/about" onClick={handleMenuItemClick} className={({ isActive }) => (isActive ? styles.active : "")}>Sobre</NavLink>
         </li>
         {user && (
           <li>
