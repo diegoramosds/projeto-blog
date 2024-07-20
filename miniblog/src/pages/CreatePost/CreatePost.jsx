@@ -16,7 +16,6 @@ const [formError, setFormError] = useState("");
 const {user} = useAuthValue();
 
 const {insertDocument, response} = useInsertDocument("posts");
-
 const navigate = useNavigate();
 
 const handleSubmit = (e) => {

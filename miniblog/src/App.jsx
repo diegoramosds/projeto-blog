@@ -49,7 +49,7 @@ function App() {
         <div className="container">
           <Routes>
             <Route path='/' element={<Home />}/>
-            <Route path='/about' element={<About />}/>
+            <Route path='/about' element={<About  />}/>
             <Route path='/search' element={<Search />}/>
             <Route path='/posts/:id' element={<Post />}/>
             <Route path='/login' element={!user ? <Login/> : <Navigate to={"/"}/>}/>

@@ -1,4 +1,16 @@
 .container {
-  min-width: 60vh;
-  margin-bottom: 28em;
+width: 100vw;
+margin-bottom: 43vh;
+}
+
+@media (max-width:766px) { 
+    .container {
+        margin-bottom: 43vh;
+        }  
+}
+
+@media (min-width: 767px) and (max-width:1200px) { 
+    .container {
+        margin-bottom: 60vh;
+        }
 }
