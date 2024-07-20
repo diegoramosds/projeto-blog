@@ -10,8 +10,9 @@
     width: 60%;
     display: flex;
     justify-content: center;
-    margin-bottom: 2em;
+    margin-bottom: 3em;
 }
+
 
 .search_form input {
     margin-right: 10px;
@@ -28,4 +29,24 @@
 
 .no_posts a {
     padding: 10px 25px;
+}
+
+
+@media (max-width: 800px) {
+    .search_form {
+        max-width: 100%;
+        width: 60%;
+        display: flex;
+        justify-content: center;
+    }
+    .home h1 {
+        font-size: 1.5em;
+    }
+    .search_form input {
+        margin-right: 1em;
+        width: 80%;
+    }
+    .search_form input::placeholder {
+        font-size: 1em;
+    }
 }

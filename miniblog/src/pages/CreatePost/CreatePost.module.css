@@ -9,3 +9,21 @@
     color: #aaa;
     margin-bottom: 2em;
 }
+
+@media (max-width: 800px) {
+    .create_post {
+        text-align: center;
+    }
+    .create_post h2 {
+        font-size: 1.4em;
+    }
+    
+    .create_post p {
+        color: #aaa;
+        margin-bottom: 2em;
+    }
+    
+}
+
+@media (max-width: 1300px) {
+}

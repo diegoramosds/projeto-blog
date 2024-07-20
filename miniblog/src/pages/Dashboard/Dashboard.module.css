@@ -40,5 +40,21 @@
 }
 .post_row {
     align-items: center;
-    border-bottom: 1px solid #EEE;
+    border-bottom: 1px solid #aaaaaac0;
+}
+
+@media (max-width: 800px) {
+
+    .dashboard h2 {
+        font-size: 1.5em;
+        margin-bottom: .5em;
+    }
+    .post_header, .post_row {
+        width: 90%;
+    }
+
+}
+
+
+@media (max-width: 1300px) {
 }

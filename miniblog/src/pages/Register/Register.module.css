@@ -5,3 +5,9 @@
 .register p {
     color: #aaa;
 }
+
+@media (max-width: 800px) {
+    .register h1 {
+        font-size: 1.5em;
+    }
+}
