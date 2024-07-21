@@ -1,5 +1,10 @@
 .post_detail {
     margin-bottom: 5em;
+    margin-bottom: 2.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .post_detail img {
@@ -17,7 +22,7 @@
 }
 
 .tags p {
-margin-right: .5em;
+margin-right: .6em;
 }
 
 .tags span {
@@ -27,20 +32,23 @@ margin-right: .5em;
 .createdby {
     font-style: italic;
     color: #444;
-    font-size: .8em;
     margin-bottom: 1em;
 }
 
 @media (max-width: 800px) {
-    .post_detail {
-        margin-bottom: 2.5em;
+    .post_detail .tags {
+       font-size: 1em;
     }
     .post_detail h2 {
         font-size: 1.2em;
-        margin-bottom: .4em;
+        margin-bottom: 0em;
     }
     .post_detail img {
-        max-width: 300px;
+        max-width: 250px;
+    }
+    .createdby {
+        font-size: 1em;
+        margin-bottom: 0em;
     }
 }    
 

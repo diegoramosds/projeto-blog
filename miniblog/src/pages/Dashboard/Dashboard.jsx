@@ -6,17 +6,42 @@ import { Link } from "react-router-dom";
 import { useAuthValue } from '../../context/AuthContext';
 import { useFetchDocuments } from '../../hooks/useFetchDocuments';
 import { useDeleteDocument } from "../../hooks/useDeleteDocuments";
+import { useState } from "react";
 
 const Dashboard = () => {
   const { user } = useAuthValue();
   const uid = user.uid;
 
   const { documents : posts, loading} = useFetchDocuments("posts", null, uid);
+  const [isOpenDeleteModal,setOpenDeleteModal] =  useState(false);
+  const [postIdToDelete, setPostIdToDelete] = useState(null);
 
-  const {deleteDocument} = useDeleteDocument("posts");
+  const { deleteDocument } = useDeleteDocument("posts");
+
+  
+
+  const openDeleteModal = (postId) => {
+    setPostIdToDelete(postId);
+    setOpenDeleteModal(true);
+    document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
+  };
+
+  const closeDeleteModal = () => {
+    setOpenDeleteModal(false);
+    setPostIdToDelete(null);
+    document.body.style.overflow = 'auto';
+    document.documentElement.style.overflow = 'auto';
+  };
+
+  const handleDelete = () => {
+    deleteDocument(postIdToDelete);
+    closeDeleteModal();
+  };
+
 
   if (loading) {
-    return <p>Carregando...</p>
+    return <p>Carregando...</p>;
   }
 
   return (
@@ -39,11 +64,22 @@ const Dashboard = () => {
            <div>
             <Link to={`/posts/${post.id}`} className="dashboard btn btn-outline">Ver</Link>
             <Link to={`/posts/edit/${post.id}`} className="dashboard btn btn-outline">Editar</Link>
-            <button onClick={() => deleteDocument(post.id)} className="dashboard btn btn-outline btn-danger">Excluir</button>
+            <button onClick={() => openDeleteModal(post.id)}  className="dashboard btn btn-outline btn-danger">Excluir</button>
            </div>
+
             </div>)}
          </>
+         
         )}
+        {isOpenDeleteModal && (
+        <div className={styles.modalOverlay}>
+          <div className={styles.modal}>
+            <h3>Deseja apagar esse post?</h3>
+            <button onClick={handleDelete} className={styles.confirmButton}>Sim</button>
+            <button onClick={closeDeleteModal} className={styles.cancelButton}>Não</button>
+          </div>
+        </div>
+      )}
     </div>
   )
 }

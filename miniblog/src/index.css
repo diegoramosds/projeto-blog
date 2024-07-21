@@ -143,8 +143,11 @@ button[disabled] {
         padding: 3px 5px;
         font-size: .8em;
       }
-      
-
+      .btn.btn-outline {
+        width: 50px;
+        padding: 4px 10px;
+        margin-bottom: 2em;
+    }
     .dashboard.btn {
         width: 50px;
         font-size: .7em;
@@ -155,9 +158,6 @@ button[disabled] {
 }
     .dashboard.btn.btn-danger {
         padding: 5px 0;
-    }
-    .btn.btn.btn-dark {
-        padding: 0;
     }
 }
 

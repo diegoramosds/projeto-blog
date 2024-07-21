@@ -7,16 +7,20 @@
     border-radius: 3px; 
 }
 .post_container h3 {
-    margin-bottom: .2em;
+    
+    margin-top: 2em;
+    margin-bottom: .3em;
 }
 .post_container .tags {
     display: flex;
     justify-content: center;
+    align-items: center;
+    padding: 0;
     margin-bottom: 2em;
 }
 
 .tags p {
-    margin-right: 2em;
+    margin-right: .6em;
 }
 
 .tags span {
@@ -26,7 +30,12 @@
 @media (max-width: 800px) {
     
     .post_container img {
-      max-width: 300px;
+      max-width: 250px;
         height: auto;
     }
+    .post_container p {
+        margin-top: 1em;
+        font-size: .95em;
+    }
 }
+

@@ -6,7 +6,7 @@
 }
 
 .search_container h1 {
-    margin-bottom: 1em;
+    margin-bottom: 8em;
 
 }
 
@@ -18,9 +18,6 @@
     text-align: center;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
 }
 
-
-@media (max-width: 1300px) {
-}

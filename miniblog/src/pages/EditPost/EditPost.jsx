@@ -66,6 +66,7 @@ const handleSubmit = (e) => {
 
   //redirect to home
   navigate("/dashboard");
+
 }
 
   return (
