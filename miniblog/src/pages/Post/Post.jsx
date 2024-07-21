@@ -1,7 +1,7 @@
 import styles from './Post.module.css'
 
 //hooks
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { useFetchDocument } from '../../hooks/useFetchDocument';
 
 
@@ -20,7 +20,9 @@ const Post = () => {
             {post.tagsArray.map((tag) => (
              <p key={tag}><span>#</span>{tag}</p>
             ))}
+            
           </div>
+          <Link to="/" className="btn btn-dark">Voltar</Link>
           </>
         )}
     </div>

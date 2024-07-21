@@ -3,7 +3,7 @@
 }
 .post_container img {
     max-width: 1000px;
-    max-height: 400px;
+    max-height: 450px;
     border-radius: 3px; 
 }
 .post_container h3 {
@@ -12,6 +12,7 @@
 .post_container .tags {
     display: flex;
     justify-content: center;
+    margin-bottom: 2em;
 }
 
 .tags p {
@@ -28,9 +29,4 @@
       max-width: 300px;
         height: auto;
     }
-}
-
-
-
-@media (max-width: 1300px) {
 }

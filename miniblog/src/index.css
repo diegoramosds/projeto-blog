@@ -122,6 +122,10 @@ button[disabled] {
 }
 
 @media (max-width:800px) {
+    body {
+        max-height: 100vh;
+        
+    }
     form {
         max-width: 80%;
         margin: 0 auto;

@@ -5,3 +5,10 @@
 .login p {
     color: #aaa;
 }
+
+
+@media (max-width: 800px) {
+   .login h1 {
+        font-size: 1.2em;
+    }
+}    

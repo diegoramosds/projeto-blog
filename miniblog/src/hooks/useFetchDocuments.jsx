@@ -5,8 +5,7 @@ import {
     query, 
     orderBy, 
     onSnapshot,
-    where, 
-    QuerySnapshot} from "firebase/firestore";
+    where} from "firebase/firestore";
 
 
 export const useFetchDocuments = (docCollection, search = null, uid = null) => {
@@ -31,9 +30,10 @@ export const useFetchDocuments = (docCollection, search = null, uid = null) => {
                 let q
 
                 if (search) {
-                    q = await query(collectionRef,
-                         where("tagsArray", "array-contains", search),
-                         orderBy("createdAt", "desc"));
+                    // q = await query(collectionRef,
+                    //      where("tagsArray", "array-contains", search),
+                    //      orderBy("createdAt", "desc"));
+                    q = await query(collectionRef, orderBy("createdAt", "desc"));
 
                 } else if (uid){
                     q = await query(collectionRef,
@@ -44,16 +44,30 @@ export const useFetchDocuments = (docCollection, search = null, uid = null) => {
                 }
 
 
-                await onSnapshot(q, (QuerySnapshot) => {
-                    setDocuments(
-                        QuerySnapshot.docs.map((doc) => ({
-                            id: doc.id,
-                            ...doc.data(),
-                        }))
-                    )
+                onSnapshot(q, (QuerySnapshot) => {
+
+                    let results = QuerySnapshot.docs.map((doc) => ({
+                        id: doc.id,
+                        ...doc.data(),
+                    }))
+
+                    if (search) {
+                        results = results.filter((doc) =>
+                          doc.tagsArray.some((tag) =>
+                            tag.toLowerCase().includes(search.toLowerCase())
+                          )
+                        );
+                      }
+
+                setDocuments(results);
+                setLoading(false);
+                
                 });
 
-                setLoading(false);
+              
+                  
+            
+                
             } catch (error) {
                 console.log(error)
                 setError(error.message);
