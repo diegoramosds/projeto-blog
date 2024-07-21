@@ -5,6 +5,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useAuthValue } from "../../context/AuthContext";
 import { useUpdateDocument } from "../../hooks/useUpdateDocument";
 import { useFetchDocument } from "../../hooks/useFetchDocument";
+import { FaSpinner } from "react-icons/fa";
 
 const EditPost = () => {
   const {id} = useParams();
@@ -112,7 +113,7 @@ const handleSubmit = (e) => {
           </label>
 
           {!response.loading &&  <button className="btn">Editar</button>}
-          {response.loading &&  <button className="btn" disabled>Aguarde</button>}
+          {response.loading &&  <button className="btn" disabled><FaSpinner className="spinner" /></button>}
 
           {response.error && <p className="error">{response.error}</p>}
 

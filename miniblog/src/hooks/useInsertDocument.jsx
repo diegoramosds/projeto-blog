@@ -7,6 +7,7 @@ const initialState = {
     error: null,
 }
 
+
 const insertReducer = (state, action) => {
     switch(action.type) {
         case "LOADING" :
@@ -25,9 +26,9 @@ export const useInsertDocument = (docCollection) => {
 
         const [response, dispatch] = useReducer(insertReducer, initialState);
 
-        // deal with memory leak
-
         const [cancelled, setCancelled] = useState(false);
+
+        const [loading, setLoading] = useState();
 
         const checkcancellBeforeDispatch = (action) => {
             if(!cancelled) {
@@ -35,6 +36,7 @@ export const useInsertDocument = (docCollection) => {
             } else {
                 dispatch(action)
             }
+            setLoading(true);
         }
 
         const insertDocument = async(document) => {
@@ -55,11 +57,13 @@ export const useInsertDocument = (docCollection) => {
                     type: "INSERTED_DOC",
                     payload: inserteDocument
                 })
+            setLoading(true);
             } catch(error) {
                 checkcancellBeforeDispatch({
                     type: "ERROR",
                     payload: error.message
                 })
+             setLoading(false);
             }
         }
 
@@ -67,5 +71,5 @@ export const useInsertDocument = (docCollection) => {
             return () => setCancelled(true);
         }, [])
 
-        return {insertDocument, response};
+        return {insertDocument, response, loading};
 };

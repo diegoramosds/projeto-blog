@@ -8,8 +8,6 @@ export const useFetchDocument = (docCollection, id) => {
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(null);
 
-     // deal with memory leak
-
      const [cancelled, setCancelled] = useState(false);
 
     useEffect(() => {

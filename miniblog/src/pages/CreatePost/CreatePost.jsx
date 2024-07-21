@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuthValue } from "../../context/AuthContext";
 import { useInsertDocument } from "../../hooks/useInsertDocument";
+import { FaSpinner } from "react-icons/fa";
 
 const CreatePost = () => {
 
@@ -15,14 +16,14 @@ const [formError, setFormError] = useState("");
 
 const {user} = useAuthValue();
 
-const {insertDocument, response} = useInsertDocument("posts");
+const {insertDocument, response, loading} = useInsertDocument("posts");
 const navigate = useNavigate();
 
 const handleSubmit = (e) => {
   e.preventDefault();
   setFormError("")
 
-  // validate image url
+
   try {
     new URL(image)
   } catch (error) {
@@ -30,10 +31,10 @@ const handleSubmit = (e) => {
   }
 
 
-  // criar array de tags
+
   const tagsArray = tags.split(",").map((tag) => tag.trim().toLowerCase());
 
-  //checar os valores
+
   if(!title || !image || !body || !tags) {
     setFormError("Preencha todos os campos");
   }
@@ -47,12 +48,12 @@ const handleSubmit = (e) => {
     createdBy: user.displayName,
   })
 
-  //redirect to home
+
   navigate("/");
 }
-
   return (
     <div className={styles.create_post}>
+      {loading && <p className="spinner"><FaSpinner/></p>}
         <h2>Novo Post</h2>
         <p>Digite oque quiser e compartilhe seus conhecimentos</p>
         <form onSubmit={handleSubmit}>

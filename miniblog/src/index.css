@@ -121,6 +121,18 @@ button[disabled] {
     border-radius: 5px;
 }
 
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .spinner {
+    display: inline-block;
+    animation: spin 1.5s linear infinite;
+    font-size: 20px;
+    color: #000; 
+  }
+
 @media (max-width:800px) {
     body {
         max-height: 100vh;

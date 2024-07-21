@@ -1,4 +1,5 @@
 
+import { FaSpinner } from "react-icons/fa";
 import { useAuthentication } from "../../hooks/useAuthentication";
 import styles from './Register.module.css'
 
@@ -77,7 +78,7 @@ const Register = () => {
             onChange={(e)=> setConfirmPassword(e.target.value)}/>
           </label>
          {!loading &&  <button className="btn" type="submit">Cadastrar</button>}
-         {loading &&  <button className="btn" disabled>Aguarde</button>}
+         {loading &&  <button className="btn" disabled><FaSpinner className="spinner" /></button>}
           {error && <p className="error">{error}</p>}
         </form>
     </div>

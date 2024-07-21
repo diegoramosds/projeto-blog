@@ -16,8 +16,7 @@ export const useAuthentication = () => {
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(null);
 
-    // clenup
-    // deal with memory leak
+
     const [cancelled, setCancelled] = useState(false);
 
     const auth = getAuth(app);
@@ -66,16 +65,12 @@ export const useAuthentication = () => {
         
     };
 
-    // logout
-
     const logout = () => {
         checkListCancelled();
 
         signOut(auth);
     };
 
-
-    //login 
     const login = async(data) => {
         checkListCancelled();
 

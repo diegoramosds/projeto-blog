@@ -2,6 +2,7 @@ import styles from "./Login.module.css"
 
 import { useAuthentication } from "../../hooks/useAuthentication";
 import { useState, useEffect } from "react"
+import { FaSpinner } from "react-icons/fa";
 
 
  
@@ -58,7 +59,7 @@ const Login = () => {
           </label>
           
          {!loading &&  <button className="btn" type="submit">Entrar</button>}
-         {loading &&  <button className="btn" disabled>Aguarde</button>}
+         {loading &&  <button className="btn" disabled><FaSpinner className="spinner" /></button>}
           {error && <p className="error">{error}</p>}
         </form>
     </div>

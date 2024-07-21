@@ -3,13 +3,17 @@ import styles from './Post.module.css'
 //hooks
 import { Link, useParams } from 'react-router-dom'
 import { useFetchDocument } from '../../hooks/useFetchDocument';
+import { FaSpinner } from 'react-icons/fa';
 
 
 const Post = () => {
     const { id } = useParams();
-    const {document : post} = useFetchDocument("posts", id);
+    const {document : post, loading} = useFetchDocument("posts", id);
   return (
     <div className={styles.post_container}>
+        {loading && (
+           <p className="spinner"><FaSpinner /></p>
+          )}
         {post && (
           <>
           <h1>{post.title}</h1>
@@ -20,6 +24,7 @@ const Post = () => {
             {post.tagsArray.map((tag) => (
              <p key={tag}><span>#</span>{tag}</p>
             ))}
+          
             
           </div>
           <Link to="/" className="btn btn-dark">Voltar</Link>
