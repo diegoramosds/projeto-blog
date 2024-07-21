@@ -5,6 +5,7 @@ import { useNavigate, Link } from "react-router-dom"
 import { useState } from "react"
 import { useFetchDocuments } from "../../hooks/useFetchDocuments";
 import PostDetail from "../../components/PostDetail";
+import { FaSpinner } from "react-icons/fa";
 
 // components
 
@@ -31,7 +32,7 @@ const Home = () => {
         <button className="btn btn-dark">Procurar</button>
      </form>
      <div>
-        {loading && <p>Carregando...</p>}
+        {loading && <p className={styles.spinner}><FaSpinner/></p>}
         {posts && posts.map((post) => <PostDetail key={post.id} post={post} />
         )}
         {posts && posts.length === 0 && (
