@@ -19,3 +19,7 @@ Configure o Firebase criando um arquivo .env na raiz do projeto.
 
 Inicie o servidor de desenvolvimento com o comando npm run dev.
 
+
+
+https://github.com/user-attachments/assets/e624f49c-47ea-4e69-8012-270d9e5b95cd
+
