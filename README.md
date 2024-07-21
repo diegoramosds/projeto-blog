@@ -5,8 +5,6 @@ Funcionalidades principais:<br>
 Criação e edição de postagens: Permite aos usuários adicionar e modificar conteúdo.<br>
 Sistema de autenticação: Garantia de que apenas usuários autorizados possam criar e editar postagens.<br>
 Navegação intuitiva: Facilita o acesso a diferentes seções do blog.<br>
-Gerenciamento de comentários: Usuários podem interagir com as postagens através de comentários.<br>
-
 
 Para rodar este projeto localmente, siga os passos abaixo:<br>
 lone o repositório do projeto utilizando o comando git clone [URL_DO_REPOSITÓRIO].<br>
