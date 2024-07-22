@@ -132,6 +132,14 @@ button[disabled] {
     font-size: 20px;
     color: #000; 
   }
+  .spinner_dashboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: spin 1.5s linear infinite;
+    font-size: 20px;
+    color: #000; 
+  }
 
 @media (max-width:800px) {
     body {
@@ -160,6 +168,11 @@ button[disabled] {
         padding: 4px 10px;
         margin-bottom: 2em;
     }
+    .btn.btn-dark {
+        background-color: #000;
+        width: 63px;
+        height: 33px;
+    }
     .dashboard.btn {
         width: 50px;
         font-size: .7em;
@@ -170,6 +183,13 @@ button[disabled] {
 }
     .dashboard.btn.btn-danger {
         padding: 5px 0;
+    }
+    input, textarea {
+        box-sizing: border-box;
+        border: none;
+        border-bottom: 1px solid #CCC;
+        padding: 0;
+        background-color: transparent;
     }
 }
 

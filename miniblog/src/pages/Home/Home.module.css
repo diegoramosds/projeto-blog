@@ -23,6 +23,10 @@
     width: 50%;
 }
 
+.search_form input::placeholder {
+    font-size: 1em;
+}
+
 .no_posts {
     text-align: center;
 }
@@ -36,7 +40,7 @@
 }
 
 
-@media (max-width: 800px) {
+@media (max-width: 766px) {
     .search_form {
         max-width: 100%;
         width: 60%;
@@ -53,6 +57,6 @@
         width: 80%;
     }
     .search_form input::placeholder {
-        font-size: 1em;
+        font-size: .9em;
     }
 }

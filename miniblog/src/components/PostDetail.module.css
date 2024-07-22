@@ -35,7 +35,7 @@ margin-right: .6em;
     margin-bottom: 1em;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 766px) {
     .post_detail .tags {
        font-size: 1em;
     }

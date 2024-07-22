@@ -6,6 +6,7 @@ import { useAuthValue } from '../../context/AuthContext';
 import { useFetchDocuments } from '../../hooks/useFetchDocuments';
 import { useDeleteDocument } from "../../hooks/useDeleteDocuments";
 import { useState } from "react";
+import { FaSpinner } from "react-icons/fa";
 
 const Dashboard = () => {
   const { user } = useAuthValue();
@@ -40,7 +41,7 @@ const Dashboard = () => {
 
 
   if (loading) {
-    return <p>Carregando...</p>;
+    return <p className="spinner_dashboard"><FaSpinner/></p>;
   }
 
   return (

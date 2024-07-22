@@ -20,23 +20,40 @@ import Dashboard from './pages/Dashboard/Dashboard';
 import Search from './pages/Search/Search';
 import Post from './pages/Post/Post';
 import EditPost from './pages/EditPost/EditPost';
+import { FaSpinner } from 'react-icons/fa';
 
 
 function App() {
 
+
   const [user, setUser] = useState('');
   const {auth} = useAuthentication();
+  const [loading, setLoading] = useState(true);
+  
+   useEffect(() => {
+    const storedUser = JSON.parse(localStorage.getItem('user'));
+    if (storedUser) {
+      setUser(storedUser);
+    }
+    setLoading(false);
+  }, []);
 
-  const loadingUser = user === undefined;
-
+  
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
-      setUser(user)
-    })
-  }, [auth])
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        localStorage.setItem('user', JSON.stringify(user));
+      } else {
+        localStorage.removeItem('user'); 
+      }
+      setUser(user);
+    });
+    return () => unsubscribe();
+  }, [auth]);
 
-  if (loadingUser) {
-    return <p>Carregando...</p>;
+
+  if (loading) {
+    return <p className="spinner"><FaSpinner/></p>;
   }
 
 

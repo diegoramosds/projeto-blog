@@ -4,7 +4,6 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuthValue } from "../../context/AuthContext";
 import { useInsertDocument } from "../../hooks/useInsertDocument";
-import { FaSpinner } from "react-icons/fa";
 
 const CreatePost = () => {
 
@@ -16,7 +15,7 @@ const [formError, setFormError] = useState("");
 
 const {user} = useAuthValue();
 
-const {insertDocument, response, loading} = useInsertDocument("posts");
+const {insertDocument, response} = useInsertDocument("posts");
 const navigate = useNavigate();
 
 const handleSubmit = (e) => {
@@ -53,7 +52,7 @@ const handleSubmit = (e) => {
 }
   return (
     <div className={styles.create_post}>
-      {loading && <p className="spinner"><FaSpinner/></p>}
+      
         <h2>Novo Post</h2>
         <p>Digite oque quiser e compartilhe seus conhecimentos</p>
         <form onSubmit={handleSubmit}>
