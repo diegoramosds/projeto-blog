@@ -21,6 +21,7 @@ import Search from './pages/Search/Search';
 import Post from './pages/Post/Post';
 import EditPost from './pages/EditPost/EditPost';
 import { FaSpinner } from 'react-icons/fa';
+import BackToTop from './components/BackToTop';
 
 
 function App() {
@@ -73,8 +74,9 @@ function App() {
             <Route path='/register' element={!user ? <Register/> : <Navigate to={"/"}/>}/>
             <Route path='/posts/create' element={user ? <CreatePost/> : <Navigate to={"/login"}/>}/>
             <Route path='/posts/edit/:id' element={user ? <EditPost/> : <Navigate to={"/login"}/>}/>
-            <Route path='/dashboard' element={user ? <Dashboard/> : <Navigate to={"/login"}/>}/>
+            <Route path='/dashboard' element={user ? <Dashboard/> : <Navigate to={"/login"}/>}/>  
           </Routes>
+          <BackToTop />
         </div>
         <Footer />
         </BrowserRouter>

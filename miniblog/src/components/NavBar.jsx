@@ -42,7 +42,8 @@ const NavBar = () => {
         setMenuOpen(false);
         resetBodyStyles();
       }
-    };
+   };
+
   return (
     <nav className={styles.navbar}>
       <NavLink to="/" className={styles.brand}>
@@ -72,7 +73,7 @@ const NavBar = () => {
               <NavLink to="/posts/create" onClick={handleMenuItemClick} className={({ isActive }) => (isActive ? styles.active : "")}>Novo Post</NavLink>
             </li>
             <li>
-              <NavLink to="/dashboard" onClick={handleMenuItemClick} className={({ isActive }) => (isActive ? styles.active : "")}>Dashboard</NavLink>
+              <NavLink to="/dashboard" onClick={handleMenuItemClick} className={({ isActive }) => (isActive ? styles.active : "")}>Gerenciar</NavLink>
             </li>
           </>
         )}

@@ -7,8 +7,6 @@ import { useFetchDocuments } from "../../hooks/useFetchDocuments";
 import PostDetail from "../../components/PostDetail";
 import { FaSpinner } from "react-icons/fa";
 
-// components
-
 const Home = () => {
   const [query, setQuery] = useState("");
   const {documents : posts, loading} = useFetchDocuments("posts");
@@ -41,6 +39,7 @@ const Home = () => {
             <Link to="/posts/create" className="btn">Criar primeiro post</Link>
           </div>
         )}
+     
      </div>
     </div>
   )

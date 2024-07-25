@@ -30,8 +30,8 @@ const Dashboard = () => {
   const closeDeleteModal = () => {
     setOpenDeleteModal(false);
     setPostIdToDelete(null);
-    document.body.style.overflow = 'auto';
-    document.documentElement.style.overflow = 'auto';
+    document.body.style.overflowY = 'auto';
+    document.documentElement.style.overflowY = 'auto';
   };
 
   const handleDelete = () => {

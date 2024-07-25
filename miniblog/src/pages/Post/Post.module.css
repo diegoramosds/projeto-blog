@@ -1,5 +1,6 @@
 .post_container {
     text-align: center;
+    margin: 0 auto;
 }
 .post_container img {
     max-width: 1000px;
@@ -7,35 +8,34 @@
     border-radius: 3px; 
 }
 .post_container h3 {
-    
+    margin-top: 1.3em;
+    margin-bottom: .5em;
+}
+.post_container p {
     margin-top: 2em;
-    margin-bottom: .3em;
-}
-.post_container .tags {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-    margin-bottom: 2em;
 }
 
-.tags p {
-    margin-right: .6em;
-}
-
-.tags span {
-    font-weight: bold;
-}
+.bodyPost {
+    overflow-wrap: break-word; 
+    width: 45%;
+    margin: 0 auto;
+  }
 
 @media (max-width: 800px) {
     
     .post_container img {
-      max-width: 250px;
+      max-width: 300px;
         height: auto;
     }
     .post_container p {
         margin-top: 1em;
         font-size: .95em;
     }
+    .bodyPost {
+        overflow-wrap: break-word; 
+        width: 72%;
+        margin: 0 auto;
+      }
+    
 }
 

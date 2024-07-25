@@ -46,6 +46,25 @@
  color: white;
  }
 
+ #arrow-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+  display: none; 
+  z-index: 1; }
+
+#arrow-top:before {
+  content: '\25B2'; 
+}
+
+
 
  @media (max-width: 766px) {
     .brand {

@@ -1,9 +1,9 @@
 import styles from './Post.module.css'
 
-//hooks
 import { Link, useParams } from 'react-router-dom'
 import { useFetchDocument } from '../../hooks/useFetchDocument';
 import { FaSpinner } from 'react-icons/fa';
+import Tags from '../../components/Tags';
 
 
 const Post = () => {
@@ -18,16 +18,15 @@ const Post = () => {
           <>
           <h1>{post.title}</h1>
           <img src={post.image} alt={post.title} />
-          <p>{post.body}</p>
+          <p className={styles.bodyPost}>{post.body}</p>
           <h3>Esse post é sobre:</h3>
-          <div className={styles.tags}>
-            {post.tagsArray.map((tag) => (
-             <p key={tag}><span>#</span>{tag}</p>
-            ))}
           
+          {post.tagsArray && <Tags tags={post.tagsArray} />}
             
-          </div>
-          <Link to="/" className="btn btn-dark">Voltar</Link>
+          
+          <p>
+            <Link to="/" className="btn btn-dark">Voltar</Link>
+          </p>
           </>
         )}
     </div>

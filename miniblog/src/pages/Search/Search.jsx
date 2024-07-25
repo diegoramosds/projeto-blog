@@ -14,7 +14,7 @@ const Search = () => {
     
   return (
     <div className={styles.search_container}>
-        <h2>Resultado da sua busca</h2>
+        <h2><strong>Resultados encontrados para:</strong> {search}</h2>
         <div>
         {loading && (
            <p className="spinner"><FaSpinner /></p>

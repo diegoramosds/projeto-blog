@@ -5,19 +5,23 @@
     justify-content: center;
 }
 
-.search_container h1 {
-    margin-bottom: 8em;
 
+.search_container h2 {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    font-weight: 400;
 }
 
 .search_container p {
-    margin: 30px;
+    margin-bottom: 3em;
 }
+
 
 .no_posts {
     text-align: center;
 }
-
-@media (max-width: 800px) {
+@media (max-width: 766px) {
+    .search_container h2 {
+       font-size: 1em;
+    }
 }
-
