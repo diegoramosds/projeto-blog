@@ -13,7 +13,6 @@ Este projeto é um **blog interativo** desenvolvido com **React**, proporcionand
 
 ---  
 
-
 <br>  
 
 ## 🚀 Tecnologias Utilizadas  
