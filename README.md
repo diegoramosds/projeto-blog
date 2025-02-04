@@ -11,7 +11,6 @@ https://github.com/user-attachments/assets/e624f49c-47ea-4e69-8012-270d9e5b95cd
 ## 💻 Sobre o Projeto  
 Este projeto é um **blog interativo** desenvolvido com **React**, proporcionando uma experiência fluida e dinâmica para os usuários.  
 
-
 ---  
 
 <br>  
