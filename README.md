@@ -38,7 +38,6 @@ Garante que apenas usuários autorizados possam criar e editar postagens.
 ### 🧭 Navegação Intuitiva  
 Facilita o acesso a diferentes seções do blog. 
 
-<!--
 ---  
 
 <br>  
@@ -109,5 +108,4 @@ npm run dev
 
 5️⃣ Acesse a aplicação pelo navegador no endereço fornecido pelo terminal.
 
---!>
 
