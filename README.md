@@ -60,38 +60,14 @@ Antes de começar, certifique-se de ter instalado:
 
 ## ▶️ Passo a Passo  
 
-### 🛠 **Executando a API**  
-
 1️⃣ **Clone o repositório**:  
 ```bash
 git clone https://github.com/diegoramosds/projeto-blog.git
-
 ```
-
-2️⃣ **Acesse o diretório da API** no terminal.
-```bash
-cd 
-```
-
-3️⃣ Execute para instalar as dependências do projeto.
-```bash
-npm install
-```
-
-4️⃣ Execute para iniciar o servidor da API.
-```bash
-npm run dev
-```
-
-5️⃣ Aguarde até que a API esteja rodando e ouvindo requisições na porta especificada.
-
-<br>
-
-### 💻 **Executando a Aplicação React** 
 
 1️⃣ Acesse o diretório da aplicação React no terminal.
 ```bash
-cd pass-web
+cd miniblog
 ```
 
 2️⃣ Execute  para instalar as dependências do projeto.
